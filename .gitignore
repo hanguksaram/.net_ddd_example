@@ -1,0 +1,11 @@
+*obj
+*bin
+.idea/
+*.config
+*.suo
+*.user
+bin
+obj
+packages
+*packages
+*.csproj

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9d3bd5d132fd4e078f69db7b4b9c22b3" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="TestCorporateContractsModel.EusMainPoint" Width="1.5" PointX="14.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Agent" Width="1.5" PointX="9.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.AgentCurrency" Width="1.5" PointX="9.75" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Agreement" Width="1.5" PointX="12" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.City" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Country" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Organization" Width="1.5" PointX="7.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Lt" Width="1.5" PointX="19.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Region" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.MainPoint" Width="1.5" PointX="17" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.UserSettings" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.Entity" Width="1.5" PointX="20" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.EntityExpiration" Width="1.5" PointX="22.25" PointY="20" IsExpanded="true" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusSa__Agent__32B73F84" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusSa__CityC__33AB63BD" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusSa__Fligh__349F87F6" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusSa__NsSal__377BF4A1" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK_EusSa_Crim__AAAD3A37" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK_MainPoint_EusMainPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Agent__Code__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Agreement__Agent__5C229E14" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Lt__CustomAgen__1DF06171" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__MainPoint__Agent__4FBCC72F" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__AgentCurr__Agent__5027A6DA" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__City__RegionRMCo__6FDF7DFE" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__City2__CountryCo__5C8CB268" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__City2__RegionCod__5B988E2F" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Organizat__CityC__6339AFF7" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__MainPoint__CityC__4CE05A84" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__MainPoint__CityC__786AA25E" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__MainPoint__Fligh__4DD47EBD" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK_MainPoint_Crimea__AAAD3A37" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Country__RegionR__70D3A237" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Lt__MainPointG__3BB699D9" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Entity__SaleP__51A50FA1" ManuallyRouted="false" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__Entity__Valid__3296789C" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.EusPlace" Width="1.5" PointX="22.25" PointY="24.5" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusOf__Agent__5946FCC0" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusOf__CityC__3B4C8585" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusOf__NsSal__3A58614C" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__EusOf__SaleP__3C40A9BE" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.RnOffc" Width="1.5" PointX="21.5" PointY="17.375" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__RnOff__LtG__5BA37B27" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.DefaultNumber" Width="1.5" PointX="22.25" PointY="36.75" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.DefaultNumberValidity" Width="1.5" PointX="24.5" PointY="28.125" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.UADefaultNumber" Width="1.5" PointX="25.25" PointY="24.75" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.UADefaultNumberValidity" Width="1.5" PointX="27.5" PointY="28.125" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__IataNumbe__Offic__118B55E3" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__UAIataNum__Offic__1B14C01D" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__IataNumbe__IataN__127F7A1C" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__UAIataNum__IataN__1C08E456" />
+        <EntityTypeShape EntityType="TestCorporateContractsModel.MainPointType" Width="1.5" PointX="3.375" PointY="0.875" />
+        <AssociationConnector Association="TestCorporateContractsModel.FK__MainPoint__SaleP__4EC8A2F6" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

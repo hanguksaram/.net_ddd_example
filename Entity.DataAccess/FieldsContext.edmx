@@ -1,0 +1,2700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TestCorporateContractsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EusPlace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="CorpCode" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="CorpQualifier" Type="tinyint" Nullable="false" />
+          <Property Name="PlaceId" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="PlaceTypeCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="PlaceType" Type="int" Nullable="false" />
+          <Property Name="SystemType" Type="int" Nullable="false" />
+          <Property Name="UA" Type="bit" Nullable="false" />
+          <Property Name="DutyCode" Type="nvarchar" MaxLength="2" />
+          <Property Name="CurrencyCode" Type="nchar" MaxLength="3" />
+          <Property Name="ConfigurationTemplateId" Type="uniqueidentifier" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="10" />
+          <Property Name="Action" Type="nvarchar" MaxLength="1" />
+          <Property Name="Ity" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="AgentCode" Type="nvarchar" MaxLength="16" />
+          <Property Name="MainPointId" Type="uniqueidentifier" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="Address_tmp" Type="nvarchar(max)" />
+          <Property Name="CityCode" Type="nchar" MaxLength="3" />
+          <Property Name="ConnectionType" Type="tinyint" />
+          <Property Name="NsPlaceId" Type="uniqueidentifier" />
+          <Property Name="NsMainPointId" Type="uniqueidentifier" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="2" />
+          <Property Name="ReleaseDate" Type="date" />
+          <Property Name="IsBlock" Type="bit" Nullable="false" />
+          <Property Name="SellingPlace" Type="bit" Nullable="false" />
+          <Property Name="SiteAudience" Type="tinyint" />
+          <Property Name="ARDWeb" Type="bit" Nullable="false" />
+          <Property Name="HasSmartTicketingSales" Type="bit" Nullable="false" />
+          <Property Name="IsSubAgentTicketIssuanceProhibited" Type="bit" Nullable="false" />
+          <Property Name="BlockchainSaleAllowed" Type="bit" Nullable="false" />
+          <Property Name="RevokedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="RevokedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="RevokedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="RevokedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="CreatedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="CreatedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="IsTest" Type="bit" Nullable="false" />
+          <Property Name="IsCharter" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EusMainPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MainPointId" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="AgentCode" Type="nvarchar" MaxLength="16" />
+          <Property Name="Type" Type="tinyint" Nullable="false" />
+          <Property Name="CityCode" Type="nchar" MaxLength="3" />
+          <Property Name="LightCityCode" Type="nchar" MaxLength="3" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="SiteUrl" Type="nvarchar(max)" />
+          <Property Name="RtoCode" Type="nvarchar" MaxLength="3" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="MiddleName" Type="nvarchar(max)" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="PhoneCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="FaxCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="FaxNumber" Type="nvarchar(max)" />
+          <Property Name="ContactSiteUrl" Type="nvarchar(max)" />
+          <Property Name="IncludeInReceipt" Type="bit" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" Nullable="false" />
+          <Property Name="ValidTo" Type="date" Nullable="false" />
+          <Property Name="SaleType" Type="tinyint" Nullable="false" />
+          <Property Name="IsSeaRateReg" Type="bit" Nullable="false" />
+          <Property Name="SeaRegFrom" Type="date" />
+          <Property Name="SeaRegTo" Type="date" />
+          <Property Name="SubagentId" Type="uniqueidentifier" />
+          <Property Name="NsMainPointId" Type="uniqueidentifier" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="IsMerch" Type="bit" Nullable="false" />
+          <Property Name="AddressLatin" Type="nvarchar(max)" />
+          <Property Name="RevokedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="RevokedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="RevokedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="RevokedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="CreatedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="CreatedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="CrimeaLightCityCode" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="DefaultNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="15" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DefaultNumberValidity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PlaceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DefaultNumberId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" Nullable="false" />
+          <Property Name="ValidTo" Type="date" Nullable="false" />
+          <Property Name="IsSecondary" Type="bit" Nullable="false" />
+          <Property Name="Osd" Type="tinyint" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UADefaultNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="15" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UADefaultNumberValidity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PlaceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DefaultNumberId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" Nullable="false" />
+          <Property Name="ValidTo" Type="date" Nullable="false" />
+          <Property Name="IsSecondary" Type="bit" Nullable="false" />
+          <Property Name="Osd" Type="tinyint" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="TKP" Type="nvarchar" MaxLength="16" />
+          <Property Name="SalesType" Type="nvarchar" MaxLength="64" />
+          <Property Name="Accreditation" Type="nvarchar" MaxLength="64" />
+          <Property Name="WarrantyGuid" Type="uniqueidentifier" />
+          <Property Name="ContractNumber" Type="nvarchar" MaxLength="64" />
+          <Property Name="Delivery" Type="nvarchar(max)" />
+          <Property Name="MaxBCO" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IsNotShowCCR" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AgentCurrency">
+          <Key>
+            <PropertyRef Name="AgentCurrencyGuid" />
+          </Key>
+          <Property Name="AgentCurrencyGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SaleCurrencyCode" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="PaymentCurrencyCode" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="AgentCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" Nullable="false" />
+          <Property Name="ValidTo" Type="date" />
+          <Property Name="Entity" Type="nvarchar(max)" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="AdmCurrencyCode" Type="nchar" MaxLength="3" />
+        </EntityType>
+        <EntityType Name="Agreement">
+          <Key>
+            <PropertyRef Name="AgreementGuid" />
+          </Key>
+          <Property Name="AgreementGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AgentCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="ObsoleteId" Type="int" Nullable="false" />
+          <Property Name="ContractNumber" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" />
+          <Property Name="ValidTo" Type="date" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="BrDate" Type="date" />
+          <Property Name="Prolong" Type="date" />
+          <Property Name="PeriodType" Type="nvarchar" MaxLength="16" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="PaymentDaysCount" Type="int" />
+          <Property Name="PaymentDaysType" Type="nvarchar" MaxLength="32" />
+          <Property Name="PaymentAccountType" Type="nvarchar" MaxLength="32" />
+          <Property Name="ReportingDaysCount" Type="int" />
+          <Property Name="ReportingDaysType" Type="nvarchar" MaxLength="32" />
+          <Property Name="ReportingAccountType" Type="nvarchar" MaxLength="32" />
+          <Property Name="ContractType" Type="int" />
+          <Property Name="SignatoryId" Type="uniqueidentifier" />
+          <Property Name="RequisitesId" Type="uniqueidentifier" />
+          <Property Name="TicketingType" Type="int" />
+          <Property Name="ReportingCurrency" Type="nchar" MaxLength="3" />
+          <Property Name="PaymentPeriodType" Type="smallint" />
+          <Property Name="PaymentDay" Type="smallint" />
+          <Property Name="SalesCurrency" Type="nchar" MaxLength="3" />
+          <Property Name="ContractStatus" Type="tinyint" Nullable="false" />
+          <Property Name="ContractStatusReason" Type="tinyint" Nullable="false" />
+          <Property Name="AuthorizationDate" Type="date" />
+          <Property Name="ReportingEmail" Type="nvarchar(max)" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsFake" Type="bit" Nullable="false" />
+          <Property Name="CarrierId" Type="int" />
+          <Property Name="CharterContractType" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="CodeRn" Type="nchar" MaxLength="3" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NameEn" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="RegionCode" Type="int" />
+          <Property Name="CountryCode" Type="nchar" MaxLength="2" />
+          <Property Name="Light" Type="bit" Nullable="false" />
+          <Property Name="Latitude" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="Longitude" Type="decimal" Precision="8" Scale="4" />
+          <Property Name="ApCode" Type="nchar" MaxLength="3" />
+          <Property Name="Iata" Type="nchar" MaxLength="3" />
+          <Property Name="RegionRMCode" Type="int" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+          <Property Name="StateEn" Type="nvarchar(max)" />
+          <Property Name="NatCode" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="NameEn" Type="nvarchar(max)" />
+          <Property Name="PhoneCode" Type="varchar" MaxLength="5" />
+          <Property Name="RegionRMCode" Type="int" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="TypeOfBusinessEntity" Type="nvarchar(max)" />
+          <Property Name="CityCode" Type="nchar" MaxLength="3" />
+          <Property Name="ActualAddress" Type="nvarchar(max)" />
+          <Property Name="PostalAddress" Type="nvarchar(max)" />
+          <Property Name="LegalAddress" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Fax" Type="nvarchar(max)" />
+          <Property Name="Mail" Type="nvarchar(max)" />
+          <Property Name="DirectorGuid" Type="uniqueidentifier" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="BankDetailsGuid" Type="uniqueidentifier" />
+          <Property Name="ForeignBankDetailsGuid" Type="uniqueidentifier" />
+          <Property Name="AuthorizingDocumentGuid" Type="uniqueidentifier" />
+          <Property Name="ManagerGuid" Type="uniqueidentifier" />
+          <Property Name="EditManagerGuid" Type="uniqueidentifier" />
+          <Property Name="AG_ID" Type="int" Nullable="false" />
+          <Property Name="UNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="32" />
+          <Property Name="INN" Type="nvarchar" MaxLength="12" />
+          <Property Name="LegalFormGuid" Type="uniqueidentifier" />
+          <Property Name="TradeName" Type="nvarchar(max)" />
+          <Property Name="BCH" Type="int" />
+          <Property Name="PartnerGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TransferredIntoAgreement" Type="nvarchar(max)" />
+          <Property Name="VatPayer" Type="bit" Nullable="false" />
+          <Property Name="TestHolding" Type="bit" Nullable="false" />
+          <Property Name="Feature" Type="int" Nullable="false" />
+          <Property Name="BchNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsExternal" Type="bit" Nullable="false" />
+          <Property Name="EthereumIsConnected" Type="bit" Nullable="false" />
+          <Property Name="EthereumID" Type="binary" MaxLength="20" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar(max)" />
+          <Property Name="ModifiedBy" Type="nvarchar(max)" />
+          <Property Name="PreferredInteractionLanguage" Type="nvarchar" MaxLength="5" />
+          <Property Name="CodePrefix" Type="nvarchar" MaxLength="16" />
+          <Property Name="CodeNumber" Type="int" Nullable="false" />
+          <Property Name="LatinName" Type="nvarchar(max)" />
+          <Property Name="TagsAddCmdCorrelationId" Type="uniqueidentifier" />
+          <Property Name="TagsRemoveCmdCorrelationId" Type="uniqueidentifier" />
+          <Property Name="SentDate" Type="datetime" />
+          <Property Name="PaymentMethodType" Type="int" />
+        </EntityType>
+        <EntityType Name="Lt">
+          <Key>
+            <PropertyRef Name="LtGuid" />
+          </Key>
+          <Property Name="LtGuid" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MainPointGuid" Type="uniqueidentifier" />
+          <Property Name="Lt" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OFFC" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AutorizeDate" Type="date" Nullable="false" />
+          <Property Name="AK" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMD" Type="bit" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="GRP" Type="nvarchar" MaxLength="15" />
+          <Property Name="AGN" Type="nvarchar" MaxLength="15" />
+          <Property Name="PID" Type="nvarchar" MaxLength="16" />
+          <Property Name="PIDType" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlaceName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Letter" Type="nvarchar" MaxLength="1" />
+          <Property Name="SRDT" Type="bit" />
+          <Property Name="ReleaseDate" Type="date" />
+          <Property Name="RMK" Type="nvarchar" MaxLength="250" />
+          <Property Name="CUST" Type="nvarchar" MaxLength="5" />
+          <Property Name="ZZ" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExecutionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ASIACode" Type="nvarchar" MaxLength="16" />
+          <Property Name="PlaceId" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsTraining" Type="bit" Nullable="false" />
+          <Property Name="TrainingVal" Type="nvarchar" MaxLength="16" />
+          <Property Name="MasterPIDGuid" Type="uniqueidentifier" />
+          <Property Name="IsOnline" Type="bit" Nullable="false" />
+          <Property Name="CustomAgentCode" Type="nvarchar" MaxLength="16" />
+          <Property Name="CustomSubagentGuid" Type="uniqueidentifier" />
+          <Property Name="CustomAgent" Type="nvarchar" MaxLength="250" />
+          <Property Name="AKSPayment" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="Hrdt" Type="bit" Nullable="false" />
+          <Property Name="Api" Type="bit" Nullable="false" />
+          <Property Name="Sws" Type="bit" Nullable="false" />
+          <Property Name="RnStatus" Type="bit" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" Nullable="false" />
+          <Property Name="ValidTo" Type="date" />
+          <Property Name="RevokedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="RevokedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="RevokedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="RevokedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="CreatedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="CreatedByCorrelationId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NameEn" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MainPoint">
+          <Key>
+            <PropertyRef Name="MainPointGuid" />
+          </Key>
+          <Property Name="MainPointGuid" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AgentCode" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="SubagentGuid" Type="uniqueidentifier" />
+          <Property Name="CityCode" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Rto" Type="bit" />
+          <Property Name="UA" Type="bit" />
+          <Property Name="TravelPortal" Type="nvarchar" MaxLength="250" />
+          <Property Name="SalingType" Type="bit" Nullable="false" />
+          <Property Name="MainPointTypeGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FIO" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="IATA" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsTKT" Type="bit" />
+          <Property Name="IsFax" Type="bit" />
+          <Property Name="PostCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+          <Property Name="Ownership" Type="nvarchar" MaxLength="500" />
+          <Property Name="WorkTime" Type="nvarchar" MaxLength="200" />
+          <Property Name="LightCityCode" Type="nchar" MaxLength="3" />
+          <Property Name="UNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NeedNotify" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsSeaRateReg" Type="bit" Nullable="false" />
+          <Property Name="SeaRegStart" Type="datetime" />
+          <Property Name="SeaRegEnd" Type="datetime" />
+          <Property Name="IsOnline" Type="bit" Nullable="false" />
+          <Property Name="IsBlock" Type="bit" Nullable="false" />
+          <Property Name="Qaa" Type="bit" Nullable="false" />
+          <Property Name="CurrencyCode" Type="nchar" MaxLength="3" />
+          <Property Name="CityCurrencyCode" Type="nchar" MaxLength="3" />
+          <Property Name="InterfaceOfArs" Type="int" Nullable="false" />
+          <Property Name="EthereumIsConnected" Type="bit" Nullable="false" />
+          <Property Name="EusMainPointGuid" Type="uniqueidentifier" />
+          <Property Name="CrimeaLightCityCode" Type="nchar" MaxLength="3" />
+          <Property Name="IsTest" Type="bit" Nullable="false" />
+          <Property Name="RevokedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="RevokedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="RevokedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="RevokedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByDisplayName" Type="varchar(max)" />
+          <Property Name="CreatedByBusinessProcessCode" Type="varchar" MaxLength="4" />
+          <Property Name="CreatedByRequestNumber" Type="varchar" MaxLength="24" />
+          <Property Name="CreatedByCorrelationId" Type="uniqueidentifier" />
+          <Property Name="IsCharter" Type="bit" Nullable="false" />
+          <Property Name="AuthorizationDate" Type="datetime" />
+          <Property Name="Sys" Type="tinyint" Nullable="false" />
+          <Property Name="Location" Type="tinyint" Nullable="false" />
+          <Property Name="SiteAudience" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MainPointType">
+          <Key>
+            <PropertyRef Name="MainPointTypeGuid" />
+          </Key>
+          <Property Name="MainPointTypeGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RnOffc">
+          <Key>
+            <PropertyRef Name="RnOffcGuid" />
+          </Key>
+          <Property Name="RnOffcGuid" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LtGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Offc" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserSettings">
+          <Key>
+            <PropertyRef Name="UserSettingsGuid" />
+          </Key>
+          <Property Name="UserSettingsGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Key" Type="nvarchar" MaxLength="250" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Entity">
+          <Key>
+            <PropertyRef Name="EntityGuid" />
+          </Key>
+          <Property Name="EntityGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EntityExpiration">
+          <Key>
+            <PropertyRef Name="EntityExpirationGuid" />
+          </Key>
+          <Property Name="EntityExpirationGuid" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MainPointGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EntityGuid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ValidFrom" Type="date" />
+          <Property Name="ValidTo" Type="date" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="ModifiedDate" Type="date" Nullable="false" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Letters" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__Agent__Code__59063A47">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Agent">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AgentCurr__Agent__5027A6DA">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="AgentCurrency" Type="Self.AgentCurrency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="AgentCurrency">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agreement__Agent__5C229E14">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="Agreement" Type="Self.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__Agent__5946FCC0">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+          <End Role="EusPlace" Type="Self.EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__CityC__3B4C8585">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusPlace" Type="Self.EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__NsSal__3A58614C">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="0..1" />
+          <End Role="EusPlace" Type="Self.EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="NsMainPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__SaleP__3C40A9BE">
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="0..1" />
+          <End Role="EusPlace" Type="Self.EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusMainPoint">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="MainPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__Agent__32B73F84">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__CityC__33AB63BD">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__Fligh__349F87F6">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="LightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__NsSal__377BF4A1">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="NsMainPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City__RegionRMCo__6FDF7DFE">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="RegionRMCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City2__CountryCo__5C8CB268">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City2__RegionCod__5B988E2F">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="RegionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Country__RegionR__70D3A237">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="RegionRMCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IataNumbe__IataN__127F7A1C">
+          <End Role="DefaultNumber" Type="Self.DefaultNumber" Multiplicity="1" />
+          <End Role="DefaultNumberValidity" Type="Self.DefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DefaultNumber">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DefaultNumberValidity">
+              <PropertyRef Name="DefaultNumberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IataNumbe__Offic__118B55E3">
+          <End Role="EusPlace" Type="Self.EusPlace" Multiplicity="1" />
+          <End Role="DefaultNumberValidity" Type="Self.DefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusPlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DefaultNumberValidity">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__CityC__6339AFF7">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lt__CustomAgen__1DF06171">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
+          <End Role="Lt" Type="Self.Lt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Lt">
+              <PropertyRef Name="CustomAgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lt__MainPointG__3BB699D9">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="0..1" />
+          <End Role="Lt" Type="Self.Lt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="Lt">
+              <PropertyRef Name="MainPointGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__Agent__4FBCC72F">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__CityC__4CE05A84">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__CityC__786AA25E">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="CityCurrencyCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__Fligh__4DD47EBD">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="LightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__SaleP__4EC8A2F6">
+          <End Role="MainPointType" Type="Self.MainPointType" Multiplicity="1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPointType">
+              <PropertyRef Name="MainPointTypeGuid" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="MainPointTypeGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RnOff__LtG__5BA37B27">
+          <End Role="Lt" Type="Self.Lt" Multiplicity="1" />
+          <End Role="RnOffc" Type="Self.RnOffc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lt">
+              <PropertyRef Name="LtGuid" />
+            </Principal>
+            <Dependent Role="RnOffc">
+              <PropertyRef Name="LtGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UAIataNum__IataN__1C08E456">
+          <End Role="UADefaultNumber" Type="Self.UADefaultNumber" Multiplicity="1" />
+          <End Role="UADefaultNumberValidity" Type="Self.UADefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UADefaultNumber">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UADefaultNumberValidity">
+              <PropertyRef Name="DefaultNumberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UAIataNum__Offic__1B14C01D">
+          <End Role="EusPlace" Type="Self.EusPlace" Multiplicity="1" />
+          <End Role="UADefaultNumberValidity" Type="Self.UADefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusPlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UADefaultNumberValidity">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Entity__SaleP__51A50FA1">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="1" />
+          <End Role="EntityExpiration" Type="Self.EntityExpiration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="EntityExpiration">
+              <PropertyRef Name="MainPointGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Entity__Valid__3296789C">
+          <End Role="Entity" Type="Self.Entity" Multiplicity="1" />
+          <End Role="EntityExpiration" Type="Self.EntityExpiration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entity">
+              <PropertyRef Name="EntityGuid" />
+            </Principal>
+            <Dependent Role="EntityExpiration">
+              <PropertyRef Name="EntityGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EusSa_Crim__AAAD3A37">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="CrimeaLightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MainPoint_EusMainPoint">
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusMainPoint">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="EusMainPointGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MainPoint_Crimea__AAAD3A37">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="CrimeaLightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TestCorporateContractsModelStoreContainer">
+          <EntitySet Name="EusPlace" EntityType="Self.EusPlace" Schema="a1" store:Type="Tables" />
+          <EntitySet Name="EusMainPoint" EntityType="Self.EusMainPoint" Schema="a1" store:Type="Tables" />
+          <EntitySet Name="DefaultNumber" EntityType="Self.DefaultNumber" Schema="a1" store:Type="Tables" />
+          <EntitySet Name="DefaultNumberValidity" EntityType="Self.DefaultNumberValidity" Schema="a1" store:Type="Tables" />
+          <EntitySet Name="UADefaultNumber" EntityType="Self.UADefaultNumber" Schema="a1" store:Type="Tables" />
+          <EntitySet Name="UADefaultNumberValidity" EntityType="Self.UADefaultNumberValidity" Schema="a1" store:Type="Tables" />
+          <EntitySet Name="Agent" EntityType="Self.Agent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AgentCurrency" EntityType="Self.AgentCurrency" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Agreement" EntityType="Self.Agreement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lt" EntityType="Self.Lt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainPoint" EntityType="Self.MainPoint" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MainPointType" EntityType="Self.MainPointType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RnOffc" EntityType="Self.RnOffc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserSettings" EntityType="Self.UserSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entity" EntityType="Self.Entity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EntityExpiration" EntityType="Self.EntityExpiration" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Agent__Code__59063A47" Association="Self.FK__Agent__Code__59063A47">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Agent" EntitySet="Agent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AgentCurr__Agent__5027A6DA" Association="Self.FK__AgentCurr__Agent__5027A6DA">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="AgentCurrency" EntitySet="AgentCurrency" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agreement__Agent__5C229E14" Association="Self.FK__Agreement__Agent__5C229E14">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__Agent__5946FCC0" Association="Self.FK__EusOf__Agent__5946FCC0">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__CityC__3B4C8585" Association="Self.FK__EusOf__CityC__3B4C8585">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__NsSal__3A58614C" Association="Self.FK__EusOf__NsSal__3A58614C">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__SaleP__3C40A9BE" Association="Self.FK__EusOf__SaleP__3C40A9BE">
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__Agent__32B73F84" Association="Self.FK__EusSa__Agent__32B73F84">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__CityC__33AB63BD" Association="Self.FK__EusSa__CityC__33AB63BD">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__Fligh__349F87F6" Association="Self.FK__EusSa__Fligh__349F87F6">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__NsSal__377BF4A1" Association="Self.FK__EusSa__NsSal__377BF4A1">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City__RegionRMCo__6FDF7DFE" Association="Self.FK__City__RegionRMCo__6FDF7DFE">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City2__CountryCo__5C8CB268" Association="Self.FK__City2__CountryCo__5C8CB268">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City2__RegionCod__5B988E2F" Association="Self.FK__City2__RegionCod__5B988E2F">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Country__RegionR__70D3A237" Association="Self.FK__Country__RegionR__70D3A237">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Country" EntitySet="Country" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IataNumbe__IataN__127F7A1C" Association="Self.FK__IataNumbe__IataN__127F7A1C">
+            <End Role="DefaultNumber" EntitySet="DefaultNumber" />
+            <End Role="DefaultNumberValidity" EntitySet="DefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IataNumbe__Offic__118B55E3" Association="Self.FK__IataNumbe__Offic__118B55E3">
+            <End Role="EusPlace" EntitySet="EusPlace" />
+            <End Role="DefaultNumberValidity" EntitySet="DefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__CityC__6339AFF7" Association="Self.FK__Organizat__CityC__6339AFF7">
+            <End Role="City" EntitySet="City" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lt__CustomAgen__1DF06171" Association="Self.FK__Lt__CustomAgen__1DF06171">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="Lt" EntitySet="Lt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lt__MainPointG__3BB699D9" Association="Self.FK__Lt__MainPointG__3BB699D9">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="Lt" EntitySet="Lt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__Agent__4FBCC72F" Association="Self.FK__MainPoint__Agent__4FBCC72F">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__CityC__4CE05A84" Association="Self.FK__MainPoint__CityC__4CE05A84">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__CityC__786AA25E" Association="Self.FK__MainPoint__CityC__786AA25E">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__Fligh__4DD47EBD" Association="Self.FK__MainPoint__Fligh__4DD47EBD">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__SaleP__4EC8A2F6" Association="Self.FK__MainPoint__SaleP__4EC8A2F6">
+            <End Role="MainPointType" EntitySet="MainPointType" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RnOff__LtG__5BA37B27" Association="Self.FK__RnOff__LtG__5BA37B27">
+            <End Role="Lt" EntitySet="Lt" />
+            <End Role="RnOffc" EntitySet="RnOffc" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UAIataNum__IataN__1C08E456" Association="Self.FK__UAIataNum__IataN__1C08E456">
+            <End Role="UADefaultNumber" EntitySet="UADefaultNumber" />
+            <End Role="UADefaultNumberValidity" EntitySet="UADefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UAIataNum__Offic__1B14C01D" Association="Self.FK__UAIataNum__Offic__1B14C01D">
+            <End Role="EusPlace" EntitySet="EusPlace" />
+            <End Role="UADefaultNumberValidity" EntitySet="UADefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Entity__SaleP__51A50FA1" Association="Self.FK__Entity__SaleP__51A50FA1">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="EntityExpiration" EntitySet="EntityExpiration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Entity__Valid__3296789C" Association="Self.FK__Entity__Valid__3296789C">
+            <End Role="Entity" EntitySet="Entity" />
+            <End Role="EntityExpiration" EntitySet="EntityExpiration" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EusSa_Crim__AAAD3A37" Association="Self.FK_EusSa_Crim__AAAD3A37">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MainPoint_EusMainPoint" Association="Self.FK_MainPoint_EusMainPoint">
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MainPoint_Crimea__AAAD3A37" Association="Self.FK_MainPoint_Crimea__AAAD3A37">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestCorporateContractsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EusMainPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="MainPointId" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AgentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Byte" Nullable="false" />
+          <Property Name="CityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="LightCityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SiteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RtoCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FaxCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FaxNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactSiteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IncludeInReceipt" Type="Boolean" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SaleType" Type="Byte" Nullable="false" />
+          <Property Name="IsSeaRateReg" Type="Boolean" Nullable="false" />
+          <Property Name="SeaRegFrom" Type="DateTime" Precision="0" />
+          <Property Name="SeaRegTo" Type="DateTime" Precision="0" />
+          <Property Name="SubagentId" Type="Guid" />
+          <Property Name="NsMainPointId" Type="Guid" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsMerch" Type="Boolean" Nullable="false" />
+          <Property Name="AddressLatin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RevokedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByCorrelationId" Type="Guid" />
+          <Property Name="RevokedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByCorrelationId" Type="Guid" />
+          <Property Name="CrimeaLightCityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK__EusSa__Agent__32B73F84" FromRole="EusMainPoint" ToRole="Organization" />
+          <NavigationProperty Name="City" Relationship="Self.FK__EusSa__CityC__33AB63BD" FromRole="EusMainPoint" ToRole="City" />
+          <NavigationProperty Name="LightCity" Relationship="Self.FK__EusSa__Fligh__349F87F6" FromRole="EusMainPoint" ToRole="City" />
+          <NavigationProperty Name="EntityMainPoint" Relationship="Self.FK__EusSa__NsSal__377BF4A1" FromRole="EusMainPoint" ToRole="MainPoint" />
+          <NavigationProperty Name="CrimeaLightCity" Relationship="Self.FK_EusSa_Crim__AAAD3A37" FromRole="EusMainPoint" ToRole="City" />
+          <NavigationProperty Name="EntityMainPoints" Relationship="Self.FK_MainPoint_EusMainPoint" FromRole="EusMainPoint" ToRole="MainPoint" />
+          <NavigationProperty Name="EusPlace" Relationship="TestCorporateContractsModel.FK__EusOf__SaleP__3C40A9BE" FromRole="EusMainPoint" ToRole="EusPlace" />
+        </EntityType>
+        <EntityType Name="Agent">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TKP" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="SalesType" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Accreditation" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="WarrantyGuid" Type="Guid" />
+          <Property Name="ContractNumber" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaxBCO" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsNotShowCCR" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK__Agent__Code__59063A47" FromRole="Agent" ToRole="Organization" />
+          <NavigationProperty Name="Agreement" Relationship="Self.FK__Agreement__Agent__5C229E14" FromRole="Agent" ToRole="Agreement" />
+          <NavigationProperty Name="Lt" Relationship="Self.FK__Lt__CustomAgen__1DF06171" FromRole="Agent" ToRole="Lt" />
+          <NavigationProperty Name="MainPoint" Relationship="Self.FK__MainPoint__Agent__4FBCC72F" FromRole="Agent" ToRole="MainPoint" />
+        </EntityType>
+        <EntityType Name="AgentCurrency">
+          <Key>
+            <PropertyRef Name="AgentCurrencyGuid" />
+          </Key>
+          <Property Name="AgentCurrencyGuid" Type="Guid" Nullable="false" />
+          <Property Name="SaleCurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PaymentCurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="AgentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Precision="0" />
+          <Property Name="Entity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AdmCurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK__AgentCurr__Agent__5027A6DA" FromRole="AgentCurrency" ToRole="Organization" />
+        </EntityType>
+        <EntityType Name="Agreement">
+          <Key>
+            <PropertyRef Name="AgreementGuid" />
+          </Key>
+          <Property Name="AgreementGuid" Type="Guid" Nullable="false" />
+          <Property Name="AgentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ObsoleteId" Type="Int32" Nullable="false" />
+          <Property Name="ContractNumber" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="BrDate" Type="DateTime" Precision="0" />
+          <Property Name="Prolong" Type="DateTime" Precision="0" />
+          <Property Name="PeriodType" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentDaysCount" Type="Int32" />
+          <Property Name="PaymentDaysType" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentAccountType" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ReportingDaysCount" Type="Int32" />
+          <Property Name="ReportingDaysType" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ReportingAccountType" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ContractType" Type="Int32" />
+          <Property Name="SignatoryId" Type="Guid" />
+          <Property Name="RequisitesId" Type="Guid" />
+          <Property Name="TicketingType" Type="Int32" />
+          <Property Name="ReportingCurrency" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="PaymentPeriodType" Type="Int16" />
+          <Property Name="PaymentDay" Type="Int16" />
+          <Property Name="SalesCurrency" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ContractStatus" Type="Byte" Nullable="false" />
+          <Property Name="ContractStatusReason" Type="Byte" Nullable="false" />
+          <Property Name="AuthorizationDate" Type="DateTime" Precision="0" />
+          <Property Name="ReportingEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BrandName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsFake" Type="Boolean" Nullable="false" />
+          <Property Name="CarrierId" Type="Int32" />
+          <Property Name="CharterContractType" Type="Byte" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__Agreement__Agent__5C229E14" FromRole="Agreement" ToRole="Agent" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CodeRn" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameEn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegionCode" Type="Int32" />
+          <Property Name="CountryCode" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="Light" Type="Boolean" Nullable="false" />
+          <Property Name="Latitude" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="Longitude" Type="Decimal" Precision="8" Scale="4" />
+          <Property Name="ApCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="Iata" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="RegionRMCode" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StateEn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NatCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EusMainPoint" Relationship="Self.FK__EusSa__CityC__33AB63BD" FromRole="City" ToRole="EusMainPoint" />
+          <NavigationProperty Name="EusMainPoint1" Relationship="Self.FK__EusSa__Fligh__349F87F6" FromRole="City" ToRole="EusMainPoint" />
+          <NavigationProperty Name="EusMainPoint2" Relationship="Self.FK_EusSa_Crim__AAAD3A37" FromRole="City" ToRole="EusMainPoint" />
+          <NavigationProperty Name="Region" Relationship="Self.FK__City__RegionRMCo__6FDF7DFE" FromRole="City" ToRole="Region" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__City2__CountryCo__5C8CB268" FromRole="City" ToRole="Country" />
+          <NavigationProperty Name="Region1" Relationship="Self.FK__City2__RegionCod__5B988E2F" FromRole="City" ToRole="Region" />
+          <NavigationProperty Name="Organization" Relationship="Self.FK__Organizat__CityC__6339AFF7" FromRole="City" ToRole="Organization" />
+          <NavigationProperty Name="MainPoint" Relationship="Self.FK__MainPoint__CityC__4CE05A84" FromRole="City" ToRole="MainPoint" />
+          <NavigationProperty Name="MainPoint1" Relationship="Self.FK__MainPoint__CityC__786AA25E" FromRole="City" ToRole="MainPoint" />
+          <NavigationProperty Name="MainPoint2" Relationship="Self.FK__MainPoint__Fligh__4DD47EBD" FromRole="City" ToRole="MainPoint" />
+          <NavigationProperty Name="MainPoint3" Relationship="Self.FK_MainPoint_Crimea__AAAD3A37" FromRole="City" ToRole="MainPoint" />
+          <NavigationProperty Name="EusPlace" Relationship="TestCorporateContractsModel.FK__EusOf__CityC__3B4C8585" FromRole="City" ToRole="EusPlace" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameEn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="RegionRMCode" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="City" Relationship="Self.FK__City2__CountryCo__5C8CB268" FromRole="Country" ToRole="City" />
+          <NavigationProperty Name="Region" Relationship="Self.FK__Country__RegionR__70D3A237" FromRole="Country" ToRole="Region" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeOfBusinessEntity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ActualAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PostalAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LegalAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DirectorGuid" Type="Guid" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BankDetailsGuid" Type="Guid" />
+          <Property Name="ForeignBankDetailsGuid" Type="Guid" />
+          <Property Name="AuthorizingDocumentGuid" Type="Guid" />
+          <Property Name="ManagerGuid" Type="Guid" />
+          <Property Name="EditManagerGuid" Type="Guid" />
+          <Property Name="AG_ID" Type="Int32" Nullable="false" />
+          <Property Name="UNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="INN" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="LegalFormGuid" Type="Guid" />
+          <Property Name="TradeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BCH" Type="Int32" />
+          <Property Name="PartnerGuid" Type="Guid" Nullable="false" />
+          <Property Name="TransferredIntoAgreement" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VatPayer" Type="Boolean" Nullable="false" />
+          <Property Name="TestHolding" Type="Boolean" Nullable="false" />
+          <Property Name="Feature" Type="Int32" Nullable="false" />
+          <Property Name="BchNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsExternal" Type="Boolean" Nullable="false" />
+          <Property Name="EthereumIsConnected" Type="Boolean" Nullable="false" />
+          <Property Name="EthereumID" Type="Binary" MaxLength="20" FixedLength="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PreferredInteractionLanguage" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CodePrefix" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CodeNumber" Type="Int32" Nullable="false" />
+          <Property Name="LatinName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EusMainPoint" Relationship="Self.FK__EusSa__Agent__32B73F84" FromRole="Organization" ToRole="EusMainPoint" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__Agent__Code__59063A47" FromRole="Organization" ToRole="Agent" />
+          <NavigationProperty Name="AgentCurrency" Relationship="Self.FK__AgentCurr__Agent__5027A6DA" FromRole="Organization" ToRole="AgentCurrency" />
+          <NavigationProperty Name="City" Relationship="Self.FK__Organizat__CityC__6339AFF7" FromRole="Organization" ToRole="City" />
+          <NavigationProperty Name="EusPlace" Relationship="TestCorporateContractsModel.FK__EusOf__Agent__5946FCC0" FromRole="Organization" ToRole="EusPlace" />
+          <Property Name="TagsAddCmdCorrelationId" Type="Guid" />
+          <Property Name="TagsRemoveCmdCorrelationId" Type="Guid" />
+          <Property Name="SentDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentMethodType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Lt">
+          <Key>
+            <PropertyRef Name="LtGuid" />
+          </Key>
+          <Property Name="LtGuid" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MainPointGuid" Type="Guid" />
+          <Property Name="LtSystem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OFFC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AutorizeDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="AK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMD" Type="Boolean" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="GRP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="AGN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PID" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PIDType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Letter" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SRDT" Type="Boolean" />
+          <Property Name="ReleaseDate" Type="DateTime" Precision="0" />
+          <Property Name="RMK" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CUST" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ZZ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExecutionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ASIACode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceId" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsTraining" Type="Boolean" Nullable="false" />
+          <Property Name="TrainingVal" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="MasterPIDGuid" Type="Guid" />
+          <Property Name="IsOnline" Type="Boolean" Nullable="false" />
+          <Property Name="CustomAgentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="CustomSubagentGuid" Type="Guid" />
+          <Property Name="CustomAgent" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AKSPayment" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Hrdt" Type="Boolean" Nullable="false" />
+          <Property Name="Api" Type="Boolean" Nullable="false" />
+          <Property Name="Sws" Type="Boolean" Nullable="false" />
+          <Property Name="RnStatus" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__Lt__CustomAgen__1DF06171" FromRole="Lt" ToRole="Agent" />
+          <NavigationProperty Name="EntityMainPoint" Relationship="Self.FK__Lt__MainPointG__3BB699D9" FromRole="Lt" ToRole="MainPoint" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Precision="0" />
+          <Property Name="RevokedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByCorrelationId" Type="Guid" />
+          <Property Name="RevokedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByCorrelationId" Type="Guid" />
+          <NavigationProperty Name="RnTaps" Relationship="TestCorporateContractsModel.FK__RnOff__LtG__5BA37B27" FromRole="Lt" ToRole="RnOffc" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NameEn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="City" Relationship="Self.FK__City__RegionRMCo__6FDF7DFE" FromRole="Region" ToRole="City" />
+          <NavigationProperty Name="City1" Relationship="Self.FK__City2__RegionCod__5B988E2F" FromRole="Region" ToRole="City" />
+          <NavigationProperty Name="Country" Relationship="Self.FK__Country__RegionR__70D3A237" FromRole="Region" ToRole="Country" />
+        </EntityType>
+        <EntityType Name="MainPoint">
+          <Key>
+            <PropertyRef Name="MainPointGuid" />
+          </Key>
+          <Property Name="MainPointGuid" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubagentGuid" Type="Guid" />
+          <Property Name="CityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rto" Type="Boolean" />
+          <Property Name="UA" Type="Boolean" />
+          <Property Name="TravelPortal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SalingType" Type="Boolean" Nullable="false" />
+          <Property Name="MainPointTypeGuid" Type="Guid" Nullable="false" />
+          <Property Name="FIO" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IATA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsTKT" Type="Boolean" />
+          <Property Name="IsFax" Type="Boolean" />
+          <Property Name="PostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Ownership" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WorkTime" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LightCityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="UNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NeedNotify" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsSeaRateReg" Type="Boolean" Nullable="false" />
+          <Property Name="SeaRegStart" Type="DateTime" Precision="3" />
+          <Property Name="SeaRegEnd" Type="DateTime" Precision="3" />
+          <Property Name="IsOnline" Type="Boolean" Nullable="false" />
+          <Property Name="IsBlock" Type="Boolean" Nullable="false" />
+          <Property Name="Qaa" Type="Boolean" Nullable="false" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="CityCurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="InterfaceOfArs" Type="Int32" Nullable="false" />
+          <Property Name="EthereumIsConnected" Type="Boolean" Nullable="false" />
+          <Property Name="EusMainPointGuid" Type="Guid" />
+          <Property Name="CrimeaLightCityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="IsTest" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="EusMainPoint" Relationship="Self.FK_MainPoint_EusMainPoint" FromRole="MainPoint" ToRole="EusMainPoint" />
+          <NavigationProperty Name="Agent" Relationship="Self.FK__MainPoint__Agent__4FBCC72F" FromRole="MainPoint" ToRole="Agent" />
+          <NavigationProperty Name="City" Relationship="Self.FK__MainPoint__CityC__4CE05A84" FromRole="MainPoint" ToRole="City" />
+          <NavigationProperty Name="City1" Relationship="Self.FK__MainPoint__CityC__786AA25E" FromRole="MainPoint" ToRole="City" />
+          <NavigationProperty Name="City2" Relationship="Self.FK__MainPoint__Fligh__4DD47EBD" FromRole="MainPoint" ToRole="City" />
+          <NavigationProperty Name="City3" Relationship="Self.FK_MainPoint_Crimea__AAAD3A37" FromRole="MainPoint" ToRole="City" />
+          <NavigationProperty Name="Lts" Relationship="Self.FK__Lt__MainPointG__3BB699D9" FromRole="MainPoint" ToRole="Lt" />
+          <NavigationProperty Name="EntityExpirations" Relationship="Self.FK__Entity__SaleP__51A50FA1" FromRole="MainPoint" ToRole="EntityExpiration" />
+          <Property Name="RevokedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByCorrelationId" Type="Guid" />
+          <Property Name="RevokedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByCorrelationId" Type="Guid" />
+          <NavigationProperty Name="EusPlace" Relationship="TestCorporateContractsModel.FK__EusOf__NsSal__3A58614C" FromRole="MainPoint" ToRole="EusPlace" />
+          <Property Name="IsCharter" Type="Boolean" Nullable="false" />
+          <Property Name="AuthorizationDate" Type="DateTime" Precision="3" />
+          <Property Name="Sys" Type="TestCorporateContractsModel.SysType" Nullable="false" />
+          <Property Name="Location" Type="TestCorporateContractsModel.EntityPlaceLocationTypes" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="SiteAudience" Type="TestCorporateContractsModel.EntityPlaceSiteAudienceTypes" Nullable="false" />
+          <NavigationProperty Name="MainPointType" Relationship="TestCorporateContractsModel.FK__MainPoint__SaleP__4EC8A2F6" FromRole="MainPoint" ToRole="MainPointType" />
+        </EntityType>
+        <EntityType Name="UserSettings">
+          <Key>
+            <PropertyRef Name="UserSettingsGuid" />
+          </Key>
+          <Property Name="UserSettingsGuid" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Key" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Entity">
+          <Key>
+            <PropertyRef Name="EntityGuid" />
+          </Key>
+          <Property Name="EntityGuid" Type="Guid" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="EntityExpirations" Relationship="Self.FK__Entity__Valid__3296789C" FromRole="Entity" ToRole="EntityExpiration" />
+        </EntityType>
+        <EntityType Name="EntityExpiration">
+          <Key>
+            <PropertyRef Name="EntityExpirationGuid" />
+          </Key>
+          <Property Name="EntityExpirationGuid" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MainPointGuid" Type="Guid" Nullable="false" />
+          <Property Name="EntityGuid" Type="Guid" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Precision="0" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Letters" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EntityMainPoint" Relationship="Self.FK__Entity__SaleP__51A50FA1" FromRole="EntityExpiration" ToRole="MainPoint" />
+          <NavigationProperty Name="Entity" Relationship="Self.FK__Entity__Valid__3296789C" FromRole="EntityExpiration" ToRole="Entity" />
+        </EntityType>
+        <Association Name="FK__EusSa__Agent__32B73F84">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__CityC__33AB63BD">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__Fligh__349F87F6">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="LightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusSa__NsSal__377BF4A1">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="NsMainPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EusSa_Crim__AAAD3A37">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusMainPoint">
+              <PropertyRef Name="CrimeaLightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MainPoint_EusMainPoint">
+          <End Role="EusMainPoint" Type="Self.EusMainPoint" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusMainPoint">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="EusMainPointGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agent__Code__59063A47">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Agent">
+              <PropertyRef Name="Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Agreement__Agent__5C229E14">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="Agreement" Type="Self.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lt__CustomAgen__1DF06171">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="0..1" />
+          <End Role="Lt" Type="Self.Lt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Lt">
+              <PropertyRef Name="CustomAgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__Agent__4FBCC72F">
+          <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Agent">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__AgentCurr__Agent__5027A6DA">
+          <End Role="Organization" Type="Self.Organization" Multiplicity="1" />
+          <End Role="AgentCurrency" Type="Self.AgentCurrency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="AgentCurrency">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City__RegionRMCo__6FDF7DFE">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="RegionRMCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City2__CountryCo__5C8CB268">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__City2__RegionCod__5B988E2F">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="RegionCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Organizat__CityC__6339AFF7">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Organization" Type="Self.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Organization">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__CityC__4CE05A84">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__CityC__786AA25E">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="CityCurrencyCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MainPoint__Fligh__4DD47EBD">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="LightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MainPoint_Crimea__AAAD3A37">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="CrimeaLightCityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Country__RegionR__70D3A237">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="Country" Type="Self.Country" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="Country">
+              <PropertyRef Name="RegionRMCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Lt__MainPointG__3BB699D9">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="0..1" />
+          <End Role="Lt" Type="Self.Lt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="Lt">
+              <PropertyRef Name="MainPointGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Entity__SaleP__51A50FA1">
+          <End Role="MainPoint" Type="Self.MainPoint" Multiplicity="1" />
+          <End Role="EntityExpiration" Type="Self.EntityExpiration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="EntityExpiration">
+              <PropertyRef Name="MainPointGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Entity__Valid__3296789C">
+          <End Role="Entity" Type="Self.Entity" Multiplicity="1" />
+          <End Role="EntityExpiration" Type="Self.EntityExpiration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entity">
+              <PropertyRef Name="EntityGuid" />
+            </Principal>
+            <Dependent Role="EntityExpiration">
+              <PropertyRef Name="EntityGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntityContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EusMainPoint" EntityType="Self.EusMainPoint" />
+          <EntitySet Name="Agent" EntityType="Self.Agent" />
+          <EntitySet Name="AgentCurrency" EntityType="Self.AgentCurrency" />
+          <EntitySet Name="Agreement" EntityType="Self.Agreement" />
+          <EntitySet Name="City" EntityType="Self.City" />
+          <EntitySet Name="Country" EntityType="Self.Country" />
+          <EntitySet Name="Organization" EntityType="Self.Organization" />
+          <EntitySet Name="Lt" EntityType="Self.Lt" />
+          <EntitySet Name="Region" EntityType="Self.Region" />
+          <EntitySet Name="MainPoint" EntityType="Self.MainPoint" />
+          <EntitySet Name="UserSettings" EntityType="Self.UserSettings" />
+          <EntitySet Name="Entity" EntityType="Self.Entity" />
+          <EntitySet Name="EntityExpiration" EntityType="Self.EntityExpiration" />
+          <AssociationSet Name="FK__EusSa__Agent__32B73F84" Association="Self.FK__EusSa__Agent__32B73F84">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__CityC__33AB63BD" Association="Self.FK__EusSa__CityC__33AB63BD">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__Fligh__349F87F6" Association="Self.FK__EusSa__Fligh__349F87F6">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusSa__NsSal__377BF4A1" Association="Self.FK__EusSa__NsSal__377BF4A1">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EusSa_Crim__AAAD3A37" Association="Self.FK_EusSa_Crim__AAAD3A37">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MainPoint_EusMainPoint" Association="Self.FK_MainPoint_EusMainPoint">
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agent__Code__59063A47" Association="Self.FK__Agent__Code__59063A47">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="Agent" EntitySet="Agent" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Agreement__Agent__5C229E14" Association="Self.FK__Agreement__Agent__5C229E14">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lt__CustomAgen__1DF06171" Association="Self.FK__Lt__CustomAgen__1DF06171">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="Lt" EntitySet="Lt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__Agent__4FBCC72F" Association="Self.FK__MainPoint__Agent__4FBCC72F">
+            <End Role="Agent" EntitySet="Agent" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__AgentCurr__Agent__5027A6DA" Association="Self.FK__AgentCurr__Agent__5027A6DA">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="AgentCurrency" EntitySet="AgentCurrency" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City__RegionRMCo__6FDF7DFE" Association="Self.FK__City__RegionRMCo__6FDF7DFE">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City2__CountryCo__5C8CB268" Association="Self.FK__City2__CountryCo__5C8CB268">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__City2__RegionCod__5B988E2F" Association="Self.FK__City2__RegionCod__5B988E2F">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Organizat__CityC__6339AFF7" Association="Self.FK__Organizat__CityC__6339AFF7">
+            <End Role="City" EntitySet="City" />
+            <End Role="Organization" EntitySet="Organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__CityC__4CE05A84" Association="Self.FK__MainPoint__CityC__4CE05A84">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__CityC__786AA25E" Association="Self.FK__MainPoint__CityC__786AA25E">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MainPoint__Fligh__4DD47EBD" Association="Self.FK__MainPoint__Fligh__4DD47EBD">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MainPoint_Crimea__AAAD3A37" Association="Self.FK_MainPoint_Crimea__AAAD3A37">
+            <End Role="City" EntitySet="City" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Country__RegionR__70D3A237" Association="Self.FK__Country__RegionR__70D3A237">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="Country" EntitySet="Country" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Lt__MainPointG__3BB699D9" Association="Self.FK__Lt__MainPointG__3BB699D9">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="Lt" EntitySet="Lt" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Entity__SaleP__51A50FA1" Association="Self.FK__Entity__SaleP__51A50FA1">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="EntityExpiration" EntitySet="EntityExpiration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Entity__Valid__3296789C" Association="Self.FK__Entity__Valid__3296789C">
+            <End Role="Entity" EntitySet="Entity" />
+            <End Role="EntityExpiration" EntitySet="EntityExpiration" />
+          </AssociationSet>
+          <EntitySet Name="EusPlace" EntityType="TestCorporateContractsModel.EusPlace" />
+          <AssociationSet Name="FK__EusOf__Agent__5946FCC0" Association="TestCorporateContractsModel.FK__EusOf__Agent__5946FCC0">
+            <End Role="Organization" EntitySet="Organization" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__CityC__3B4C8585" Association="TestCorporateContractsModel.FK__EusOf__CityC__3B4C8585">
+            <End Role="City" EntitySet="City" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__NsSal__3A58614C" Association="TestCorporateContractsModel.FK__EusOf__NsSal__3A58614C">
+            <End Role="MainPoint" EntitySet="MainPoint" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EusOf__SaleP__3C40A9BE" Association="TestCorporateContractsModel.FK__EusOf__SaleP__3C40A9BE">
+            <End Role="EusMainPoint" EntitySet="EusMainPoint" />
+            <End Role="EusPlace" EntitySet="EusPlace" />
+          </AssociationSet>
+          <EntitySet Name="RnOffc" EntityType="TestCorporateContractsModel.RnOffc" />
+          <AssociationSet Name="FK__RnOff__LtG__5BA37B27" Association="TestCorporateContractsModel.FK__RnOff__LtG__5BA37B27">
+            <End Role="Lt" EntitySet="Lt" />
+            <End Role="RnOffc" EntitySet="RnOffc" />
+          </AssociationSet>
+          <EntitySet Name="DefaultNumber" EntityType="TestCorporateContractsModel.DefaultNumber" />
+          <EntitySet Name="DefaultNumberValidity" EntityType="TestCorporateContractsModel.DefaultNumberValidity" />
+          <EntitySet Name="UADefaultNumber" EntityType="TestCorporateContractsModel.UADefaultNumber" />
+          <EntitySet Name="UADefaultNumberValidity" EntityType="TestCorporateContractsModel.UADefaultNumberValidity" />
+          <AssociationSet Name="FK__IataNumbe__Offic__118B55E3" Association="TestCorporateContractsModel.FK__IataNumbe__Offic__118B55E3">
+            <End Role="EusPlace" EntitySet="EusPlace" />
+            <End Role="DefaultNumberValidity" EntitySet="DefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UAIataNum__Offic__1B14C01D" Association="TestCorporateContractsModel.FK__UAIataNum__Offic__1B14C01D">
+            <End Role="EusPlace" EntitySet="EusPlace" />
+            <End Role="UADefaultNumberValidity" EntitySet="UADefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IataNumbe__IataN__127F7A1C" Association="TestCorporateContractsModel.FK__IataNumbe__IataN__127F7A1C">
+            <End Role="DefaultNumber" EntitySet="DefaultNumber" />
+            <End Role="DefaultNumberValidity" EntitySet="DefaultNumberValidity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UAIataNum__IataN__1C08E456" Association="TestCorporateContractsModel.FK__UAIataNum__IataN__1C08E456">
+            <End Role="UADefaultNumber" EntitySet="UADefaultNumber" />
+            <End Role="UADefaultNumberValidity" EntitySet="UADefaultNumberValidity" />
+          </AssociationSet>
+          <EntitySet Name="MainPointType" EntityType="TestCorporateContractsModel.MainPointType" />
+          <AssociationSet Name="FK__MainPoint__SaleP__4EC8A2F6" Association="TestCorporateContractsModel.FK__MainPoint__SaleP__4EC8A2F6">
+            <End Role="MainPointType" EntitySet="MainPointType" />
+            <End Role="MainPoint" EntitySet="MainPoint" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="EusPlace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CorpCode" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CorpQualifier" Type="Byte" Nullable="false" />
+          <Property Name="PlaceId" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceTypeCode" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceType" Type="Int32" Nullable="false" />
+          <Property Name="SystemType" Type="Int32" Nullable="false" />
+          <Property Name="UA" Type="Boolean" Nullable="false" />
+          <Property Name="DutyCode" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ConfigurationTemplateId" Type="Guid" />
+          <Property Name="Vendor" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Ity" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="AgentCode" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="MainPointId" Type="Guid" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address_tmp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CityCode" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+          <Property Name="ConnectionType" Type="Byte" />
+          <Property Name="NsPlaceId" Type="Guid" />
+          <Property Name="NsMainPointId" Type="Guid" />
+          <Property Name="CountryCode" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="ReleaseDate" Type="DateTime" Precision="0" />
+          <Property Name="IsBlock" Type="Boolean" Nullable="false" />
+          <Property Name="SellingPlace" Type="Boolean" Nullable="false" />
+          <Property Name="SiteAudience" Type="Byte" />
+          <Property Name="ARDWeb" Type="Boolean" Nullable="false" />
+          <Property Name="HasSmartTicketingSales" Type="Boolean" Nullable="false" />
+          <Property Name="IsSubAgentTicketIssuanceProhibited" Type="Boolean" Nullable="false" />
+          <Property Name="BlockchainSaleAllowed" Type="Boolean" Nullable="false" />
+          <Property Name="RevokedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByCorrelationId" Type="Guid" />
+          <Property Name="RevokedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RevokedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByDisplayName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByBusinessProcessCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByRequestNumber" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedByCorrelationId" Type="Guid" />
+          <Property Name="IsTest" Type="Boolean" Nullable="false" />
+          <Property Name="IsCharter" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Organization" Relationship="TestCorporateContractsModel.FK__EusOf__Agent__5946FCC0" FromRole="EusPlace" ToRole="Organization" />
+          <NavigationProperty Name="City" Relationship="TestCorporateContractsModel.FK__EusOf__CityC__3B4C8585" FromRole="EusPlace" ToRole="City" />
+          <NavigationProperty Name="MainPoint" Relationship="TestCorporateContractsModel.FK__EusOf__NsSal__3A58614C" FromRole="EusPlace" ToRole="MainPoint" />
+          <NavigationProperty Name="EusMainPoint" Relationship="TestCorporateContractsModel.FK__EusOf__SaleP__3C40A9BE" FromRole="EusPlace" ToRole="EusMainPoint" />
+          <NavigationProperty Name="DefaultNumberValidity" Relationship="TestCorporateContractsModel.FK__IataNumbe__Offic__118B55E3" FromRole="EusPlace" ToRole="DefaultNumberValidity" />
+          <NavigationProperty Name="UADefaultNumberValidity" Relationship="TestCorporateContractsModel.FK__UAIataNum__Offic__1B14C01D" FromRole="EusPlace" ToRole="UADefaultNumberValidity" />
+        </EntityType>
+        <Association Name="FK__EusOf__Agent__5946FCC0">
+          <End Type="TestCorporateContractsModel.Organization" Role="Organization" Multiplicity="0..1" />
+          <End Type="TestCorporateContractsModel.EusPlace" Role="EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organization">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="AgentCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__CityC__3B4C8585">
+          <End Type="TestCorporateContractsModel.City" Role="City" Multiplicity="0..1" />
+          <End Type="TestCorporateContractsModel.EusPlace" Role="EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Code" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="CityCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__NsSal__3A58614C">
+          <End Type="TestCorporateContractsModel.MainPoint" Role="MainPoint" Multiplicity="0..1" />
+          <End Type="TestCorporateContractsModel.EusPlace" Role="EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPoint">
+              <PropertyRef Name="MainPointGuid" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="NsMainPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EusOf__SaleP__3C40A9BE">
+          <End Type="TestCorporateContractsModel.EusMainPoint" Role="EusMainPoint" Multiplicity="0..1" />
+          <End Type="TestCorporateContractsModel.EusPlace" Role="EusPlace" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusMainPoint">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EusPlace">
+              <PropertyRef Name="MainPointId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RnOffc">
+          <Key>
+            <PropertyRef Name="RnOffcGuid" />
+          </Key>
+          <Property Name="RnOffcGuid" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LtGuid" Type="Guid" Nullable="false" />
+          <Property Name="Offc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Lt" Relationship="TestCorporateContractsModel.FK__RnOff__LtG__5BA37B27" FromRole="RnOffc" ToRole="Lt" />
+        </EntityType>
+        <Association Name="FK__RnOff__LtG__5BA37B27">
+          <End Type="TestCorporateContractsModel.Lt" Role="Lt" Multiplicity="1" />
+          <End Type="TestCorporateContractsModel.RnOffc" Role="RnOffc" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lt">
+              <PropertyRef Name="LtGuid" />
+            </Principal>
+            <Dependent Role="RnOffc">
+              <PropertyRef Name="LtGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DefaultNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DefaultNumberValidity" Relationship="TestCorporateContractsModel.FK__IataNumbe__IataN__127F7A1C" FromRole="DefaultNumber" ToRole="DefaultNumberValidity" />
+        </EntityType>
+        <EntityType Name="DefaultNumberValidity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="PlaceId" Type="Guid" Nullable="false" />
+          <Property Name="DefaultNumberId" Type="Guid" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsSecondary" Type="Boolean" Nullable="false" />
+          <Property Name="Osd" Type="Byte" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EusPlace" Relationship="TestCorporateContractsModel.FK__IataNumbe__Offic__118B55E3" FromRole="DefaultNumberValidity" ToRole="EusPlace" />
+          <NavigationProperty Name="DefaultNumber" Relationship="TestCorporateContractsModel.FK__IataNumbe__IataN__127F7A1C" FromRole="DefaultNumberValidity" ToRole="DefaultNumber" />
+        </EntityType>
+        <EntityType Name="UADefaultNumber">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UADefaultNumberValidity" Relationship="TestCorporateContractsModel.FK__UAIataNum__IataN__1C08E456" FromRole="UADefaultNumber" ToRole="UADefaultNumberValidity" />
+        </EntityType>
+        <EntityType Name="UADefaultNumberValidity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="PlaceId" Type="Guid" Nullable="false" />
+          <Property Name="DefaultNumberId" Type="Guid" Nullable="false" />
+          <Property Name="ValidFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ValidTo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsSecondary" Type="Boolean" Nullable="false" />
+          <Property Name="Osd" Type="Byte" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EusPlace" Relationship="TestCorporateContractsModel.FK__UAIataNum__Offic__1B14C01D" FromRole="UADefaultNumberValidity" ToRole="EusPlace" />
+          <NavigationProperty Name="UADefaultNumber" Relationship="TestCorporateContractsModel.FK__UAIataNum__IataN__1C08E456" FromRole="UADefaultNumberValidity" ToRole="UADefaultNumber" />
+        </EntityType>
+        <Association Name="FK__IataNumbe__Offic__118B55E3">
+          <End Type="TestCorporateContractsModel.EusPlace" Role="EusPlace" Multiplicity="1" />
+          <End Type="TestCorporateContractsModel.DefaultNumberValidity" Role="DefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusPlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DefaultNumberValidity">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UAIataNum__Offic__1B14C01D">
+          <End Type="TestCorporateContractsModel.EusPlace" Role="EusPlace" Multiplicity="1" />
+          <End Type="TestCorporateContractsModel.UADefaultNumberValidity" Role="UADefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EusPlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UADefaultNumberValidity">
+              <PropertyRef Name="PlaceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IataNumbe__IataN__127F7A1C">
+          <End Type="TestCorporateContractsModel.DefaultNumber" Role="DefaultNumber" Multiplicity="1" />
+          <End Type="TestCorporateContractsModel.DefaultNumberValidity" Role="DefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DefaultNumber">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DefaultNumberValidity">
+              <PropertyRef Name="DefaultNumberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UAIataNum__IataN__1C08E456">
+          <End Type="TestCorporateContractsModel.UADefaultNumber" Role="UADefaultNumber" Multiplicity="1" />
+          <End Type="TestCorporateContractsModel.UADefaultNumberValidity" Role="UADefaultNumberValidity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UADefaultNumber">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UADefaultNumberValidity">
+              <PropertyRef Name="DefaultNumberId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="SysType" UnderlyingType="Byte">
+          <Member Name="Default" Value="0" />
+          <Member Name="EusET" Value="1" />
+          <Member Name="ElioET" Value="2" />
+          <Member Name="Rn" Value="3" />
+          <Member Name="SabreET" Value="4" />
+          <Member Name="EusTest" Value="5" />
+        </EnumType>
+        <EnumType Name="EntityPlaceLocationTypes" UnderlyingType="Byte" >
+          <Member Name="Rto" Value="0" />
+          <Member Name="City" Value="1" />
+          <Member Name="Online" Value="2" />
+        </EnumType>
+        <EnumType Name="EntityPlaceSiteAudienceTypes" UnderlyingType="Byte">
+          <Member Name="Default" Value="0" />
+          <Member Name="B2C" Value="1" />
+          <Member Name="B2B" Value="2" />
+          <Member Name="B2A" Value="3" />
+        </EnumType>
+        <EntityType Name="MainPointType">
+          <Key>
+            <PropertyRef Name="MainPointTypeGuid" />
+          </Key>
+          <Property Name="MainPointTypeGuid" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MainPoint" Relationship="TestCorporateContractsModel.FK__MainPoint__SaleP__4EC8A2F6" FromRole="MainPointType" ToRole="MainPoint" />
+        </EntityType>
+        <Association Name="FK__MainPoint__SaleP__4EC8A2F6">
+          <End Type="TestCorporateContractsModel.MainPointType" Role="MainPointType" Multiplicity="1" />
+          <End Type="TestCorporateContractsModel.MainPoint" Role="MainPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPointType">
+              <PropertyRef Name="MainPointTypeGuid" />
+            </Principal>
+            <Dependent Role="MainPoint">
+              <PropertyRef Name="MainPointTypeGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestCorporateContractsModelStoreContainer" CdmEntityContainer="EntityContext">
+          <EntitySetMapping Name="EusMainPoint">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.EusMainPoint">
+              <MappingFragment StoreEntitySet="EusMainPoint">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MainPointId" ColumnName="MainPointId" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="LightCityCode" ColumnName="LightCityCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="SiteUrl" ColumnName="SiteUrl" />
+                <ScalarProperty Name="RtoCode" ColumnName="RtoCode" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FaxCode" ColumnName="FaxCode" />
+                <ScalarProperty Name="FaxNumber" ColumnName="FaxNumber" />
+                <ScalarProperty Name="ContactSiteUrl" ColumnName="ContactSiteUrl" />
+                <ScalarProperty Name="IncludeInReceipt" ColumnName="IncludeInReceipt" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="SaleType" ColumnName="SaleType" />
+                <ScalarProperty Name="IsSeaRateReg" ColumnName="IsSeaRateReg" />
+                <ScalarProperty Name="SeaRegFrom" ColumnName="SeaRegFrom" />
+                <ScalarProperty Name="SeaRegTo" ColumnName="SeaRegTo" />
+                <ScalarProperty Name="SubagentId" ColumnName="SubagentId" />
+                <ScalarProperty Name="NsMainPointId" ColumnName="NsMainPointId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsMerch" ColumnName="IsMerch" />
+                <ScalarProperty Name="AddressLatin" ColumnName="AddressLatin" />
+                <ScalarProperty Name="RevokedByRequestNumber" ColumnName="RevokedByRequestNumber" />
+                <ScalarProperty Name="RevokedByCorrelationId" ColumnName="RevokedByCorrelationId" />
+                <ScalarProperty Name="RevokedByBusinessProcessCode" ColumnName="RevokedByBusinessProcessCode" />
+                <ScalarProperty Name="RevokedByDisplayName" ColumnName="RevokedByDisplayName" />
+                <ScalarProperty Name="CreatedByDisplayName" ColumnName="CreatedByDisplayName" />
+                <ScalarProperty Name="CreatedByBusinessProcessCode" ColumnName="CreatedByBusinessProcessCode" />
+                <ScalarProperty Name="CreatedByRequestNumber" ColumnName="CreatedByRequestNumber" />
+                <ScalarProperty Name="CreatedByCorrelationId" ColumnName="CreatedByCorrelationId" />
+                <ScalarProperty Name="CrimeaLightCityCode" ColumnName="CrimeaLightCityCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agent">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Agent">
+              <MappingFragment StoreEntitySet="Agent">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="TKP" ColumnName="TKP" />
+                <ScalarProperty Name="SalesType" ColumnName="SalesType" />
+                <ScalarProperty Name="Accreditation" ColumnName="Accreditation" />
+                <ScalarProperty Name="WarrantyGuid" ColumnName="WarrantyGuid" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="Delivery" ColumnName="Delivery" />
+                <ScalarProperty Name="MaxBCO" ColumnName="MaxBCO" />
+                <ScalarProperty Name="IsNotShowCCR" ColumnName="IsNotShowCCR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AgentCurrency">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.AgentCurrency">
+              <MappingFragment StoreEntitySet="AgentCurrency">
+                <ScalarProperty Name="AgentCurrencyGuid" ColumnName="AgentCurrencyGuid" />
+                <ScalarProperty Name="SaleCurrencyCode" ColumnName="SaleCurrencyCode" />
+                <ScalarProperty Name="PaymentCurrencyCode" ColumnName="PaymentCurrencyCode" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="Entity" ColumnName="Entity" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="AdmCurrencyCode" ColumnName="AdmCurrencyCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreement">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Agreement">
+              <MappingFragment StoreEntitySet="Agreement">
+                <ScalarProperty Name="AgreementGuid" ColumnName="AgreementGuid" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="ObsoleteId" ColumnName="ObsoleteId" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="BrDate" ColumnName="BrDate" />
+                <ScalarProperty Name="Prolong" ColumnName="Prolong" />
+                <ScalarProperty Name="PeriodType" ColumnName="PeriodType" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="PaymentDaysCount" ColumnName="PaymentDaysCount" />
+                <ScalarProperty Name="PaymentDaysType" ColumnName="PaymentDaysType" />
+                <ScalarProperty Name="PaymentAccountType" ColumnName="PaymentAccountType" />
+                <ScalarProperty Name="ReportingDaysCount" ColumnName="ReportingDaysCount" />
+                <ScalarProperty Name="ReportingDaysType" ColumnName="ReportingDaysType" />
+                <ScalarProperty Name="ReportingAccountType" ColumnName="ReportingAccountType" />
+                <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+                <ScalarProperty Name="SignatoryId" ColumnName="SignatoryId" />
+                <ScalarProperty Name="RequisitesId" ColumnName="RequisitesId" />
+                <ScalarProperty Name="TicketingType" ColumnName="TicketingType" />
+                <ScalarProperty Name="ReportingCurrency" ColumnName="ReportingCurrency" />
+                <ScalarProperty Name="PaymentPeriodType" ColumnName="PaymentPeriodType" />
+                <ScalarProperty Name="PaymentDay" ColumnName="PaymentDay" />
+                <ScalarProperty Name="SalesCurrency" ColumnName="SalesCurrency" />
+                <ScalarProperty Name="ContractStatus" ColumnName="ContractStatus" />
+                <ScalarProperty Name="ContractStatusReason" ColumnName="ContractStatusReason" />
+                <ScalarProperty Name="AuthorizationDate" ColumnName="AuthorizationDate" />
+                <ScalarProperty Name="ReportingEmail" ColumnName="ReportingEmail" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="IsFake" ColumnName="IsFake" />
+                <ScalarProperty Name="CarrierId" ColumnName="CarrierId" />
+                <ScalarProperty Name="CharterContractType" ColumnName="CharterContractType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CodeRn" ColumnName="CodeRn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="RegionCode" ColumnName="RegionCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="Light" ColumnName="Light" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="ApCode" ColumnName="ApCode" />
+                <ScalarProperty Name="Iata" ColumnName="Iata" />
+                <ScalarProperty Name="RegionRMCode" ColumnName="RegionRMCode" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="StateEn" ColumnName="StateEn" />
+                <ScalarProperty Name="NatCode" ColumnName="NatCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="PhoneCode" ColumnName="PhoneCode" />
+                <ScalarProperty Name="RegionRMCode" ColumnName="RegionRMCode" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organization">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Organization">
+              <MappingFragment StoreEntitySet="Organization">
+                <ScalarProperty Name="PaymentMethodType" ColumnName="PaymentMethodType" />
+                <ScalarProperty Name="SentDate" ColumnName="SentDate" />
+                <ScalarProperty Name="TagsRemoveCmdCorrelationId" ColumnName="TagsRemoveCmdCorrelationId" />
+                <ScalarProperty Name="TagsAddCmdCorrelationId" ColumnName="TagsAddCmdCorrelationId" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="TypeOfBusinessEntity" ColumnName="TypeOfBusinessEntity" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="ActualAddress" ColumnName="ActualAddress" />
+                <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+                <ScalarProperty Name="LegalAddress" ColumnName="LegalAddress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="DirectorGuid" ColumnName="DirectorGuid" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="BankDetailsGuid" ColumnName="BankDetailsGuid" />
+                <ScalarProperty Name="ForeignBankDetailsGuid" ColumnName="ForeignBankDetailsGuid" />
+                <ScalarProperty Name="AuthorizingDocumentGuid" ColumnName="AuthorizingDocumentGuid" />
+                <ScalarProperty Name="ManagerGuid" ColumnName="ManagerGuid" />
+                <ScalarProperty Name="EditManagerGuid" ColumnName="EditManagerGuid" />
+                <ScalarProperty Name="AG_ID" ColumnName="AG_ID" />
+                <ScalarProperty Name="UNID" ColumnName="UNID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="INN" ColumnName="INN" />
+                <ScalarProperty Name="LegalFormGuid" ColumnName="LegalFormGuid" />
+                <ScalarProperty Name="TradeName" ColumnName="TradeName" />
+                <ScalarProperty Name="BCH" ColumnName="BCH" />
+                <ScalarProperty Name="PartnerGuid" ColumnName="PartnerGuid" />
+                <ScalarProperty Name="TransferredIntoAgreement" ColumnName="TransferredIntoAgreement" />
+                <ScalarProperty Name="VatPayer" ColumnName="VatPayer" />
+                <ScalarProperty Name="TestHolding" ColumnName="TestHolding" />
+                <ScalarProperty Name="Feature" ColumnName="Feature" />
+                <ScalarProperty Name="BchNumber" ColumnName="BchNumber" />
+                <ScalarProperty Name="IsExternal" ColumnName="IsExternal" />
+                <ScalarProperty Name="EthereumIsConnected" ColumnName="EthereumIsConnected" />
+                <ScalarProperty Name="EthereumID" ColumnName="EthereumID" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="PreferredInteractionLanguage" ColumnName="PreferredInteractionLanguage" />
+                <ScalarProperty Name="CodePrefix" ColumnName="CodePrefix" />
+                <ScalarProperty Name="CodeNumber" ColumnName="CodeNumber" />
+                <ScalarProperty Name="LatinName" ColumnName="LatinName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lt">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Lt">
+              <MappingFragment StoreEntitySet="Lt">
+                <ScalarProperty Name="CreatedByCorrelationId" ColumnName="CreatedByCorrelationId" />
+                <ScalarProperty Name="CreatedByRequestNumber" ColumnName="CreatedByRequestNumber" />
+                <ScalarProperty Name="CreatedByBusinessProcessCode" ColumnName="CreatedByBusinessProcessCode" />
+                <ScalarProperty Name="CreatedByDisplayName" ColumnName="CreatedByDisplayName" />
+                <ScalarProperty Name="RevokedByDisplayName" ColumnName="RevokedByDisplayName" />
+                <ScalarProperty Name="RevokedByBusinessProcessCode" ColumnName="RevokedByBusinessProcessCode" />
+                <ScalarProperty Name="RevokedByCorrelationId" ColumnName="RevokedByCorrelationId" />
+                <ScalarProperty Name="RevokedByRequestNumber" ColumnName="RevokedByRequestNumber" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="LtGuid" ColumnName="LtGuid" />
+                <ScalarProperty Name="MainPointGuid" ColumnName="MainPointGuid" />
+                <ScalarProperty Name="LtSystem" ColumnName="Lt" />
+                <ScalarProperty Name="OFFC" ColumnName="OFFC" />
+                <ScalarProperty Name="AutorizeDate" ColumnName="AutorizeDate" />
+                <ScalarProperty Name="AK" ColumnName="AK" />
+                <ScalarProperty Name="EMD" ColumnName="EMD" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="GRP" ColumnName="GRP" />
+                <ScalarProperty Name="AGN" ColumnName="AGN" />
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="PIDType" ColumnName="PIDType" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Letter" ColumnName="Letter" />
+                <ScalarProperty Name="SRDT" ColumnName="SRDT" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="RMK" ColumnName="RMK" />
+                <ScalarProperty Name="CUST" ColumnName="CUST" />
+                <ScalarProperty Name="ZZ" ColumnName="ZZ" />
+                <ScalarProperty Name="ExecutionCode" ColumnName="ExecutionCode" />
+                <ScalarProperty Name="ASIACode" ColumnName="ASIACode" />
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="IsTraining" ColumnName="IsTraining" />
+                <ScalarProperty Name="TrainingVal" ColumnName="TrainingVal" />
+                <ScalarProperty Name="MasterPIDGuid" ColumnName="MasterPIDGuid" />
+                <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+                <ScalarProperty Name="CustomAgentCode" ColumnName="CustomAgentCode" />
+                <ScalarProperty Name="CustomSubagentGuid" ColumnName="CustomSubagentGuid" />
+                <ScalarProperty Name="CustomAgent" ColumnName="CustomAgent" />
+                <ScalarProperty Name="AKSPayment" ColumnName="AKSPayment" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="Hrdt" ColumnName="Hrdt" />
+                <ScalarProperty Name="Api" ColumnName="Api" />
+                <ScalarProperty Name="Sws" ColumnName="Sws" />
+                <ScalarProperty Name="RnStatus" ColumnName="RnStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Region">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainPoint">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.MainPoint">
+              <MappingFragment StoreEntitySet="MainPoint">
+                <ScalarProperty Name="SiteAudience" ColumnName="SiteAudience" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Sys" ColumnName="Sys" />
+                <ScalarProperty Name="AuthorizationDate" ColumnName="AuthorizationDate" />
+                <ScalarProperty Name="IsCharter" ColumnName="IsCharter" />
+                <ScalarProperty Name="CreatedByCorrelationId" ColumnName="CreatedByCorrelationId" />
+                <ScalarProperty Name="CreatedByRequestNumber" ColumnName="CreatedByRequestNumber" />
+                <ScalarProperty Name="CreatedByBusinessProcessCode" ColumnName="CreatedByBusinessProcessCode" />
+                <ScalarProperty Name="CreatedByDisplayName" ColumnName="CreatedByDisplayName" />
+                <ScalarProperty Name="RevokedByDisplayName" ColumnName="RevokedByDisplayName" />
+                <ScalarProperty Name="RevokedByBusinessProcessCode" ColumnName="RevokedByBusinessProcessCode" />
+                <ScalarProperty Name="RevokedByCorrelationId" ColumnName="RevokedByCorrelationId" />
+                <ScalarProperty Name="RevokedByRequestNumber" ColumnName="RevokedByRequestNumber" />
+                <ScalarProperty Name="MainPointGuid" ColumnName="MainPointGuid" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="SubagentGuid" ColumnName="SubagentGuid" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Rto" ColumnName="Rto" />
+                <ScalarProperty Name="UA" ColumnName="UA" />
+                <ScalarProperty Name="TravelPortal" ColumnName="TravelPortal" />
+                <ScalarProperty Name="SalingType" ColumnName="SalingType" />
+                <ScalarProperty Name="MainPointTypeGuid" ColumnName="MainPointTypeGuid" />
+                <ScalarProperty Name="FIO" ColumnName="FIO" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="IATA" ColumnName="IATA" />
+                <ScalarProperty Name="IsTKT" ColumnName="IsTKT" />
+                <ScalarProperty Name="IsFax" ColumnName="IsFax" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Ownership" ColumnName="Ownership" />
+                <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="LightCityCode" ColumnName="LightCityCode" />
+                <ScalarProperty Name="UNID" ColumnName="UNID" />
+                <ScalarProperty Name="NeedNotify" ColumnName="NeedNotify" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsSeaRateReg" ColumnName="IsSeaRateReg" />
+                <ScalarProperty Name="SeaRegStart" ColumnName="SeaRegStart" />
+                <ScalarProperty Name="SeaRegEnd" ColumnName="SeaRegEnd" />
+                <ScalarProperty Name="IsOnline" ColumnName="IsOnline" />
+                <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+                <ScalarProperty Name="Qaa" ColumnName="Qaa" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="CityCurrencyCode" ColumnName="CityCurrencyCode" />
+                <ScalarProperty Name="InterfaceOfArs" ColumnName="InterfaceOfArs" />
+                <ScalarProperty Name="EthereumIsConnected" ColumnName="EthereumIsConnected" />
+                <ScalarProperty Name="EusMainPointGuid" ColumnName="EusMainPointGuid" />
+                <ScalarProperty Name="CrimeaLightCityCode" ColumnName="CrimeaLightCityCode" />
+                <ScalarProperty Name="IsTest" ColumnName="IsTest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSettings">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.UserSettings">
+              <MappingFragment StoreEntitySet="UserSettings">
+                <ScalarProperty Name="UserSettingsGuid" ColumnName="UserSettingsGuid" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entity">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.Entity">
+              <MappingFragment StoreEntitySet="Entity">
+                <ScalarProperty Name="EntityGuid" ColumnName="EntityGuid" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntityExpiration">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.EntityExpiration">
+              <MappingFragment StoreEntitySet="EntityExpiration">
+                <ScalarProperty Name="EntityExpirationGuid" ColumnName="EntityExpirationGuid" />
+                <ScalarProperty Name="MainPointGuid" ColumnName="MainPointGuid" />
+                <ScalarProperty Name="EntityGuid" ColumnName="EntityGuid" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Letters" ColumnName="Letters" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EusPlace">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.EusPlace">
+              <MappingFragment StoreEntitySet="EusPlace">
+                <ScalarProperty Name="IsCharter" ColumnName="IsCharter" />
+                <ScalarProperty Name="IsTest" ColumnName="IsTest" />
+                <ScalarProperty Name="CreatedByCorrelationId" ColumnName="CreatedByCorrelationId" />
+                <ScalarProperty Name="CreatedByRequestNumber" ColumnName="CreatedByRequestNumber" />
+                <ScalarProperty Name="CreatedByBusinessProcessCode" ColumnName="CreatedByBusinessProcessCode" />
+                <ScalarProperty Name="CreatedByDisplayName" ColumnName="CreatedByDisplayName" />
+                <ScalarProperty Name="RevokedByDisplayName" ColumnName="RevokedByDisplayName" />
+                <ScalarProperty Name="RevokedByBusinessProcessCode" ColumnName="RevokedByBusinessProcessCode" />
+                <ScalarProperty Name="RevokedByCorrelationId" ColumnName="RevokedByCorrelationId" />
+                <ScalarProperty Name="RevokedByRequestNumber" ColumnName="RevokedByRequestNumber" />
+                <ScalarProperty Name="BlockchainSaleAllowed" ColumnName="BlockchainSaleAllowed" />
+                <ScalarProperty Name="IsSubAgentTicketIssuanceProhibited" ColumnName="IsSubAgentTicketIssuanceProhibited" />
+                <ScalarProperty Name="HasSmartTicketingSales" ColumnName="HasSmartTicketingSales" />
+                <ScalarProperty Name="ARDWeb" ColumnName="ARDWeb" />
+                <ScalarProperty Name="SiteAudience" ColumnName="SiteAudience" />
+                <ScalarProperty Name="SellingPlace" ColumnName="SellingPlace" />
+                <ScalarProperty Name="IsBlock" ColumnName="IsBlock" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="NsMainPointId" ColumnName="NsMainPointId" />
+                <ScalarProperty Name="NsPlaceId" ColumnName="NsPlaceId" />
+                <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+                <ScalarProperty Name="CityCode" ColumnName="CityCode" />
+                <ScalarProperty Name="Address_tmp" ColumnName="Address_tmp" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="MainPointId" ColumnName="MainPointId" />
+                <ScalarProperty Name="AgentCode" ColumnName="AgentCode" />
+                <ScalarProperty Name="Ity" ColumnName="Ity" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="ConfigurationTemplateId" ColumnName="ConfigurationTemplateId" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="DutyCode" ColumnName="DutyCode" />
+                <ScalarProperty Name="UA" ColumnName="UA" />
+                <ScalarProperty Name="SystemType" ColumnName="SystemType" />
+                <ScalarProperty Name="PlaceType" ColumnName="PlaceType" />
+                <ScalarProperty Name="PlaceTypeCode" ColumnName="PlaceTypeCode" />
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="CorpQualifier" ColumnName="CorpQualifier" />
+                <ScalarProperty Name="CorpCode" ColumnName="CorpCode" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RnOffc">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.RnOffc">
+              <MappingFragment StoreEntitySet="RnOffc">
+                <ScalarProperty Name="Offc" ColumnName="Offc" />
+                <ScalarProperty Name="LtGuid" ColumnName="LtGuid" />
+                <ScalarProperty Name="RnOffcGuid" ColumnName="RnOffcGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefaultNumber">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.DefaultNumber">
+              <MappingFragment StoreEntitySet="DefaultNumber">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefaultNumberValidity">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.DefaultNumberValidity">
+              <MappingFragment StoreEntitySet="DefaultNumberValidity">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Osd" ColumnName="Osd" />
+                <ScalarProperty Name="IsSecondary" ColumnName="IsSecondary" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="DefaultNumberId" ColumnName="DefaultNumberId" />
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UADefaultNumber">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.UADefaultNumber">
+              <MappingFragment StoreEntitySet="UADefaultNumber">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UADefaultNumberValidity">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.UADefaultNumberValidity">
+              <MappingFragment StoreEntitySet="UADefaultNumberValidity">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Osd" ColumnName="Osd" />
+                <ScalarProperty Name="IsSecondary" ColumnName="IsSecondary" />
+                <ScalarProperty Name="ValidTo" ColumnName="ValidTo" />
+                <ScalarProperty Name="ValidFrom" ColumnName="ValidFrom" />
+                <ScalarProperty Name="DefaultNumberId" ColumnName="DefaultNumberId" />
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainPointType">
+            <EntityTypeMapping TypeName="TestCorporateContractsModel.MainPointType">
+              <MappingFragment StoreEntitySet="MainPointType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MainPointTypeGuid" ColumnName="MainPointTypeGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
